@@ -1,0 +1,12 @@
+<div class = "grid">
+  <h3>Please enter the product's details to be added:</h3>
+  <form id="formNewProduct" name="formNewProduct" #productData ="ngForm" (ngSubmit)= "addNewProduct(productData.value)">
+    <table>
+       <tr><td> <label>Product Name:</label></td><td><input type="text" name="name" id="name" [(ngModel)]="pname"></td></tr>
+       <tr><td> <label>Product Price:</label></td><td><input type="text" name="price" id="price" [(ngModel)]="pprice"></td></tr>
+       <tr><td> <label>Product Quantity:</label></td><td><input type="text" name="quantity" id="quantity" [(ngModel)]="pqty"></td></tr><br/>
+    </table>
+    <input class = "add" type="submit" value="ADD">
+  </form>
+  <br/><a routerLink ="/"> Done</a><br/>
+</div>

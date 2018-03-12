@@ -1,0 +1,89 @@
+<!--div class = "grid">
+  <div class="panel panel-primary">
+  <div class="panel-heading">Products list:</div>
+  <div class="panel-body">
+  <table>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th></th>
+      <th></th>
+      <tr *ngFor = "let item of products"> 
+        <td>{{item._id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.quantity}}</td>
+        <td (click) = "deleteProduct(item._id)"><a href="#">Remove</a></td>
+        <td (click) = "updateProduct(item._id)"><a href="#">Edit</a></td>
+      </tr>
+    </table>
+      <button class="btn btn-success" routerLink = "/prod">Add Product</button>
+    </div>
+  </div>
+</div-->
+
+<div class="container">
+    <div class="col-md-12">
+      <h1>Product List</h1>
+        <table class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr>
+          <th class="text-center">ID</th>
+          <th class="text-center">Name</th>
+          <th class="text-center">Price</th>
+          <th class="text-center">Quantity</th>
+          <th class="text-center">&nbsp;</th>
+          <th class="text-center">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product._id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>
+            <button class="btn btn-info"
+                          (click)="updateProduct(product._id)">
+                         Edit<i class="fa fa-edit"></i>
+                </button>
+            <button class="btn btn-danger"
+                         (click)="deleteProduct(product._id)">Remove
+                         <i class="fa fa-minus"></i>
+              </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <button class="btn btn-success"
+                 routerLink = "/prod"><i class="fa fa-plus">Add Product</i></button>
+    <br />
+    <br />
+
+    <!--form *ngIf="editProductForm">
+        <h2>Edit Product Details</h2>
+        <p>ID: <input type="text"
+                               name="id"
+                               [(ngModel)]="editedProduct.id" /></p>
+        <p>Name: <input type="text"
+                                     name="name"
+                                     [(ngModel)]="editedProduct.name" /></p>
+        <p>Description: <input type="text"
+                                              name="description"
+                                              [(ngModel)]="editedProduct.description" /></p>
+        <p>Price: <input type="text"
+                                    name="price"
+                                    [(ngModel)]="editedProduct.price" /></p>
+        <p>
+          <button type="button"
+                       class="btn btn-primary"
+                       (click)="updateProduct(editedProduct)">Submit</button>
+          <button type="button"
+                       class="btn btn-warning"
+                       (click)="cancelEdits()">Cancel</button>
+        </p>
+       </form-->
+      </div>
+    </div>

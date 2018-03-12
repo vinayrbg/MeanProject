@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+table , td, th{
+    align-items:auto ;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: 80px;
+    box-shadow: 5px 5px 5px #252424; 
+    border: 2px solid #cbcbcb;
+    border-radius: 10px;
+    background-color: rgb(71, 114, 133);
+}
+
+.btn {
+    margin-top: 15px;
+    margin-left: 180px;
+    font-size: 15px;
+    border-radius: 30px;
+    padding: 5px 10px 5px 10px;
+    background-color: rgb(24, 48, 58);
+    color: aliceblue;
+}
+
+.grid {
+    width:1000px;
+	height: 500px;
+	padding: 10px 50px 50px 50px; 
+	border-radius: 30px;
+	border: 2px solid #cbcbcb;
+	box-shadow: 10px 15px 5px #363434; 
+    margin-left: 180px;
+    background-color: rgb(124, 131, 134);
+}
+
+.add {
+    margin-top: 20px;
+    margin-left: 280px; 
+    font-size: 40px
+}
