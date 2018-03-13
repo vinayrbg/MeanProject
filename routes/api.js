@@ -2,9 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
 var db = mongojs('mongodb://vinay:raju@ds129394.mlab.com:29394/kickapp_vin',['products']);
-router.get('/test',function(req,res){
-    res.sendFile(__dirname,'/dist/index.html')
-});
+
 // Get ALL products
 router.get('/products',function(req,res,next){
     db.products.find(function(err,products){
@@ -69,6 +67,20 @@ router.delete('/products/:id',function(req,res,next){
 router.put('/product/:id',function(req,res,next){
     console.log(req.params.id);
     console.log(req.body);
+    /*db.products.findAndModify(req.params.id,
+        req.body,
+        {
+            new:true
+        },
+        function(err,products){
+            if(err){
+                res.send("Error in updating");
+            }
+            else{
+                res.json(products);
+            }
+        }
+    )*/
     db.products.findAndModify({
         query: { _id: mongojs.ObjectId(req.params.id) },
         update: { $set: req.body  },
