@@ -11,21 +11,23 @@ app.use(bodyparser.urlencoded({extended: false}));
 
 app.use(express.static(path.join(__dirname,'dist')));
 
-app.use('/',api);
 
 app.get('/test',function(req,res){
     res.sendFile(__dirname,'/dist/index.html')
 });
+
+
+app.use('/',api);
 /*
     Get port from environment and store in express
 */ 
 var port = process.env.PORT || '3000';
-app.set('port',port);
+//app.set('port',port);
 
 /* 
     Create HTTP server 
 */
-var server = http.createServer(app);
+//var server = http.createServer(app);
 
 //Listen on provided PORT
-server.listen(port, () => console.log("Server is running"));
+app.listen(port, () => console.log("Server is running"));
