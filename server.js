@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname,'dist')));
 
 app.use('/',api);
 
-app.get('/',function(req,res){
+app.get('/test',function(req,res){
     res.sendFile(__dirname,'/dist/index.html')
 });
 /*
