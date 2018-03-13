@@ -25,7 +25,7 @@
 
 <div class="container">
     <div class="col-md-12">
-      <h1>Product List</h1>
+     <br/><br/> <h1 style="margin-left:100px">Product List</h1>
         <table class="table table-bordered table-striped table-hover">
       <thead>
         <tr>
@@ -45,7 +45,7 @@
           <td>{{ product.quantity }}</td>
           <td>
             <button class="btn btn-info"
-                          (click)="updateProduct(product._id)">
+                          (click)="showEditProductForm(product)">
                          Edit<i class="fa fa-edit"></i>
                 </button>
             <button class="btn btn-danger"
@@ -58,24 +58,22 @@
     </table>
   
     <button class="btn btn-success"
-                 routerLink = "/prod"><i class="fa fa-plus">Add Product</i></button>
+                 routerLink = "/prod" style="margin-left:800px"><i class="fa fa-plus">Add Product</i></button>
     <br />
     <br />
 
-    <!--form *ngIf="editProductForm">
-        <h2>Edit Product Details</h2>
-        <p>ID: <input type="text"
-                               name="id"
-                               [(ngModel)]="editedProduct.id" /></p>
-        <p>Name: <input type="text"
+    <form *ngIf="editProductForm">
+        <h2>Edit Product Details</h2><br/>
+        <p>ID:        {{editedProduct._id}}</p>
+        <p>Name:      <input type="text"
                                      name="name"
                                      [(ngModel)]="editedProduct.name" /></p>
-        <p>Description: <input type="text"
-                                              name="description"
-                                              [(ngModel)]="editedProduct.description" /></p>
-        <p>Price: <input type="text"
-                                    name="price"
-                                    [(ngModel)]="editedProduct.price" /></p>
+        <p>Price:     <input type="text" 
+                                      name="price" 
+                                      [(ngModel)]="editedProduct.price" /></p>
+        <p>Quantity:  <input type="text"
+                                    name="quantity"
+                                    [(ngModel)]="editedProduct.quantity" /></p>
         <p>
           <button type="button"
                        class="btn btn-primary"
@@ -84,6 +82,6 @@
                        class="btn btn-warning"
                        (click)="cancelEdits()">Cancel</button>
         </p>
-       </form-->
+       </form>
       </div>
     </div>

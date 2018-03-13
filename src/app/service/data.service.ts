@@ -20,8 +20,14 @@ export class DataService
     return this._http.post('/products', JSON.stringify(products), {headers: headers}).map(res => res.json());
   }
 
-  deleteTask(id) {
+  deleteProd(id) {
     return this._http.delete(`/products/${id}`)
       .map(res => res);
+  }
+
+  updateProd(products){
+    var headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this._http.put(`/product/${products.id}`, JSON.stringify(products), {headers: headers}).map(res => res.json());
   }
 }
